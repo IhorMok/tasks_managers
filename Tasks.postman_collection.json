@@ -1,0 +1,212 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Tasks",
+		"_postman_id": "d1bbe156-a445-3441-a343-dd8b900c03ea",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "3. All tasks",
+			"request": {
+				"url": "http://127.0.0.1:8000/tasks/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Tag_two\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "4. All tags",
+			"request": {
+				"url": "http://127.0.0.1:8000/tags/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "1. Created_tasks",
+			"request": {
+				"url": "http://127.0.0.1:8000/tasks/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Task_4\",\n\t\"description\": \"This is 4 task \",\n\t\"tags\": [3],\n\t\"priority\": \"High\",\n\t\"status\": \"Done\"\n}\n\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2. Created_tag",
+			"request": {
+				"url": "http://127.0.0.1:8000/tags/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Tag_two\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "1.1 Update tasks",
+			"request": {
+				"url": "http://127.0.0.1:8000/tasks/2/",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Update_task!\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2.1 Update tags",
+			"request": {
+				"url": "http://127.0.0.1:8000/tags/1/",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Tag_one_update\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3.1 \"Status\" order_by",
+			"request": {
+				"url": {
+					"raw": "http://127.0.0.1:8000/tasks/?status=Backlog",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"tasks",
+						""
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Backlog",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3.2 \"Priority\" order_by",
+			"request": {
+				"url": {
+					"raw": "http://127.0.0.1:8000/tasks/?priority=High",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"tasks",
+						""
+					],
+					"query": [
+						{
+							"key": "priority",
+							"value": "High",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "6. Get task by ID with tags",
+			"request": {
+				"url": "http://127.0.0.1:8000/tasks/4/",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "5. Get tag by ID with tasks",
+			"request": {
+				"url": "http://127.0.0.1:8000/tags/3",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
